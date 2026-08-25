@@ -7,7 +7,7 @@ const Book = function(title, author, pages , read){
     this.author = author;
     this.pages = pages;
     this.read = read;
-
+    this.id = crypto.randomUUID();
     this.info = function(){
         return `the ${this.title} by ${this.author} , ${pages} pages , ${this.read}`
     }
