@@ -61,7 +61,10 @@ function displayAllBooks(myLibrary) {
 }
 
 let b = new Book("book","me",10,"no");
-console.log(b);
 addBookToLibrary(b);
+let c = new Book("book","me",10,"no");
+addBookToLibrary(c);
+let d = new Book("book","me",10,"no");
+addBookToLibrary(d);
 
 displayAllBooks(myLibrary);
