@@ -8,11 +8,45 @@
     <script src="library.js" defer></script>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="nav-btns">
+            <button command="show-modal" commandfor="my-dialog">Add Book</button>
+        </div>
+
+        <div class="form">
+
+            <dialog id="my-dialog">
+                <form>
+                    
+                    <label for="title">Book title
+                    <input id="title" name= "title" />
+                    </label>
+                    
+                    <label for="author" >Author
+                    <input id="author" name= "author" />
+                    </label>
+
+                    <label for="pages">Pages
+                    <input id="pages" name= "pages" />
+                    </label>
+                    
+                    <label for="read-status">Read status
+                    <input id="read-status" name= "read-status" />
+                    </label>
+                    
+                    <button class="submit-form-btn">Submit</button>
+                    
+                </form>
+
+                <button commandfor="my-dialog" command="close">Close</button>
+
+            </dialog>
+
+        </div>
+    </nav>
     <div class="container">
         <h1>Books</h1>
-        <div class="shelf">
-         </div>  
-        </div>
+        <div class="shelf"></div>  
     </div>
 </body>
 </html>

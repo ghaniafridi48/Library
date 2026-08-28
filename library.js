@@ -67,4 +67,6 @@ addBookToLibrary(c);
 let d = new Book("book","me",10,"no");
 addBookToLibrary(d);
 
+let e = new Book("book","me",10,"no");
+addBookToLibrary(e);
 displayAllBooks(myLibrary);
