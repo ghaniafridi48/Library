@@ -56,6 +56,16 @@ function displayAllBooks(myLibrary) {
         details.appendChild(read);
         read.textContent = 'Read Status: ' + book.read;
 
+        const changeStatus= document.createElement('button');
+        changeStatus.textContent = 'Mark Read';
+        card.appendChild(changeStatus);
+        changeStatus.addEventListener('click',() => {
+            changeStatus.textContent = changeStatus.textContent === 'Mark Read' ? 'Mark Unread' : 'Mark Read';
+            read.textContent = changeStatus.textContent === 'Mark Read' ? 'Read  Status: not read' : 'Read Status: read';
+        })
+
+
+
 
         const delete_book = document.createElement('button');
         delete_book.textContent = 'Delete Book';
@@ -67,10 +77,6 @@ function displayAllBooks(myLibrary) {
 
             myLibrary.splice(deleteIndex,1);
             displayAllBooks(myLibrary);
-
-
-
-
         })
 
     });
