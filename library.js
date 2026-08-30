@@ -1,6 +1,5 @@
 const myLibrary = [];
 
-
 const Book = function(title, author, pages , read){
 
     this.title = title;
@@ -22,6 +21,7 @@ function addBookToLibrary(book){
 function displayAllBooks(myLibrary) {
 
     const shelf = document.querySelector('.shelf');
+    shelf.textContent = '';
    
     myLibrary.forEach(book => {
 
@@ -59,7 +59,19 @@ function displayAllBooks(myLibrary) {
 
         const delete_book = document.createElement('button');
         delete_book.textContent = 'Delete Book';
+        delete_book.setAttribute('data-id', book.id);
         card.appendChild(delete_book);
+
+        delete_book.addEventListener("click",() =>{
+            const deleteIndex = myLibrary.findIndex(obj => obj.id === delete_book.getAttribute('data-id'));
+
+            myLibrary.splice(deleteIndex,1);
+            displayAllBooks(myLibrary);
+
+
+
+
+        })
 
     });
 }
@@ -84,14 +96,11 @@ form.addEventListener('submit' , (event) => {
     }
 )
 
-
-let b = new Book("book","me",10,"no");
+let b = new Book("book1","me",10,"not read");
 addBookToLibrary(b);
-let c = new Book("book","me",10,"no");
+let c = new Book("book2","me",10,"not read");
 addBookToLibrary(c);
-let d = new Book("book","me",10,"no");
+let d = new Book("book3","me",10,"not read");
 addBookToLibrary(d);
 
-let e = new Book("book","me",10,"no");
-addBookToLibrary(e);
 displayAllBooks(myLibrary);
