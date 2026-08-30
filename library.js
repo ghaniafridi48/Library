@@ -60,6 +60,27 @@ function displayAllBooks(myLibrary) {
     });
 }
 
+const form = document.querySelector('form');
+form.addEventListener('submit' , (event) => {
+        event.preventDefault();
+
+        const titleValue= document.getElementById('title').value;
+        const authorValue = document.getElementById('author').value;
+        const pagesValue = document.getElementById('pages').value;
+        const readstatusValue = document.getElementById('read-status').value;
+
+        const newBook = new Book(titleValue,authorValue,pagesValue,readstatusValue);
+
+        addBookToLibrary(newBook);
+
+        displayAllBooks(myLibrary);
+
+        form.reset();
+        document.getElementById('my-dialog').close();
+    }
+)
+
+
 let b = new Book("book","me",10,"no");
 addBookToLibrary(b);
 let c = new Book("book","me",10,"no");
