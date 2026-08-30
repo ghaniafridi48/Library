@@ -24,6 +24,15 @@ button{
     cursor: pointer;
     width: 100%;
 }
+.card > button {
+    width: 80%;
+    align-self: center;
+    background-color: red;
+}
+.card > button:hover{
+    background-color: brown;
+    color: antiquewhite;
+}
 button:hover {
   /* background-color: #76AEED;
   color: black; */

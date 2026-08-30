@@ -57,6 +57,10 @@ function displayAllBooks(myLibrary) {
         read.textContent = 'Read Status: ' + book.read;
 
 
+        const delete_book = document.createElement('button');
+        delete_book.textContent = 'Delete Book';
+        card.appendChild(delete_book);
+
     });
 }
 
